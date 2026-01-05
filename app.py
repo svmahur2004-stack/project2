@@ -13,6 +13,7 @@ def check_voting_eligibility(name, voter_id, age, constituency):
     )
 
 
+# 👇 IMPORTANT: input only runs when file is executed directly
 if __name__ == "__main__":
     name = input("Enter Name: ")
     voter_id = input("Enter Voter ID: ")
