@@ -1,6 +1,4 @@
-import sys
-
-def structured_enquiry(name, enquiry_type, age):
+def check_voting_eligibility(name, enquiry_type, age):
     result = (
         f"Name: {name}\n"
         f"Enquiry Type: {enquiry_type}\n"
@@ -8,14 +6,16 @@ def structured_enquiry(name, enquiry_type, age):
     )
 
     if age >= 18:
-        result += "Status: Eligible\n"
+        result += "Status: Eligible to vote"
     else:
-        result += "Status: Not Eligible\n"
+        result += "Status: Not eligible to vote"
 
     return result
 
 
 if __name__ == "__main__":
+    import sys
+
     if len(sys.argv) != 4:
         print("Usage: python app.py <name> <enquiry_type> <age>")
         sys.exit(1)
@@ -24,4 +24,4 @@ if __name__ == "__main__":
     enquiry_type = sys.argv[2]
     age = int(sys.argv[3])
 
-    print(structured_enquiry(name, enquiry_type, age))
+    print(check_voting_eligibility(name, enquiry_type, age))
